@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { ApiService } from "./services/api.service";
+import { DatabaseService } from "./services/database.service";
+import { DemoImageInterface } from "./interfaces/demo-image-intf";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'angular-dev-test-fynd';
+  demoImages: DemoImageInterface[];
+
+  constructor(
+    private apiService: ApiService,
+    private databaseService: DatabaseService
+  ) {
+    this.databaseService.demoImagesDataChangeEvent$.subscribe(
+      () => (this.demoImages = this.databaseService.getDemoImagesData())
+    );
+  }
+
+  ngOnInit(): void {
+    this.apiService.fetchDemoImages();
+  }
 }
