@@ -10,6 +10,8 @@ import { DatabaseService } from "src/app/services/database.service";
 })
 export class ImageGridComponent implements OnInit {
   demoImages: DemoImageInterface[];
+  imageToEdit: DemoImageInterface;
+  showImageEditorWindow: boolean = true;
 
   constructor(
     private apiService: ApiService,
@@ -23,4 +25,9 @@ export class ImageGridComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.fetchDemoImages();
   }
+
+  toggleImageEditor(demoImage: DemoImageInterface){
+    this.imageToEdit = demoImage;
+    this.showImageEditorWindow = !this.showImageEditorWindow;
+  }  
 }

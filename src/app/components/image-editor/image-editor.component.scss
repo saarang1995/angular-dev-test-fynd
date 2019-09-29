@@ -1,0 +1,92 @@
+.image_editor__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($color: #000000, $alpha: 0.15);
+
+  .image_editor {
+    min-width: 20rem;
+    width: 60%;
+    height: 50%;
+    min-height: 20rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      flex: 0.1;
+      border-bottom: 0.1rem solid rgba($color: #000000, $alpha: 0.15);
+      span {
+        font-size: 2rem;
+      }
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    .original_new_img__container {
+      flex: 0.6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      .img_container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem;
+        height: 100%;
+        align-items: center;
+
+        .title {
+          font-size: 1.4rem;
+          opacity: 0.7;
+        }
+        img {
+          width: 22rem;
+          height: 11rem;
+          object-fit: cover;
+          margin: 1rem;
+          cursor: pointer;
+          transition: 0.5s;
+        }
+        .img_name {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .confirmation__container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-end;
+      flex: 0.3;
+      .new_img_chooser {
+        input {
+          font-size: 1.4rem;
+          padding: 1rem;
+          border: 0.1rem solid;
+        }
+      }
+      .confirm {
+        border: 0.1rem solid blue;
+        color: blue;
+        padding: 0.7rem 1.4rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        margin: 0.5rem;
+      }
+    }
+  }
+}

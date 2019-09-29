@@ -8,12 +8,14 @@ import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
 })
 export class ImageCardComponent implements OnInit {
   @Input() demoImage: DemoImageInterface;
-  @Output() imageEditTrigger = new EventEmitter();
+  @Output() toggleImageEditor = new EventEmitter();
+  
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  showEditor() {
+    this.toggleImageEditor.next(this.demoImage);
   }
 }

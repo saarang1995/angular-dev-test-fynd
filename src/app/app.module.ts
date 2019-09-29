@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImageGridComponent } from './components/image-grid/image-grid.component';
 import { ImageCardComponent } from './components/image-card/image-card.component';
+import { ImageEditorComponent } from './components/image-editor/image-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageGridComponent,
-    ImageCardComponent
+    ImageCardComponent,
+    ImageEditorComponent
   ],
   imports: [
     BrowserModule,
