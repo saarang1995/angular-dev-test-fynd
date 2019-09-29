@@ -32,7 +32,7 @@ export class ImageGridComponent implements OnInit {
   }
 
   triggerDeleteImage(imageToDelete: DemoImageInterface){
-    const isDeletionConfirmed = window.confirm(`Are you sure you want to delete ${imageToDelete.name}?`)
+    const isDeletionConfirmed = window.confirm(`Are you sure you want to delete Image: ${imageToDelete.name}?`)
     if(!isDeletionConfirmed) return;
     const filteredDemoImages = this.demoImages.filter(data => data.name !== imageToDelete.name);
     this.demoImages = filteredDemoImages;

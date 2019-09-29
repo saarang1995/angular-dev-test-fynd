@@ -2,13 +2,14 @@
   <div class="image_editor">
     <section class="header">
       <span>Edit Image</span>
+      <span class="img_name">{{imageData?.name}}</span>
       <img src="/assets/close.svg" alt="close" (click)="close()">
     </section>
     <section class="original_new_img__container">
       <div class="img_container">
         <div class="title">Original Image:</div>
-        <img [src]="imageData?.image_url">
-        <!-- <span class="img_name">hello</span> -->
+        <img [src]="imageData?.image_url" alt="imageData?.name">
+
       </div>
       <div class="img_container">
         <div class="title">New Image:</div>
