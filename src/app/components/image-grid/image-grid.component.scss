@@ -1,6 +1,20 @@
+@import "../../styles/responsive";
+
 .image-grid__container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .image-grid__wrapper {
-      display: grid;
-      grid-template-columns: auto auto auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    @include tablet {
+      grid-template-columns: auto auto;
+    }
+    @include mobileMedium {
+      grid-template-columns: auto;
+    }
   }
 }
