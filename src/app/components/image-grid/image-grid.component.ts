@@ -10,8 +10,8 @@ import { DatabaseService } from "src/app/services/database.service";
 })
 export class ImageGridComponent implements OnInit {
   demoImages: DemoImageInterface[];
-  imageToEdit: DemoImageInterface;
-  showImageEditorWindow: boolean = true;
+  imageData: DemoImageInterface;
+  showImageEditorWindow: boolean = false;
 
   constructor(
     private apiService: ApiService,
@@ -26,8 +26,18 @@ export class ImageGridComponent implements OnInit {
     this.apiService.fetchDemoImages();
   }
 
-  toggleImageEditor(demoImage: DemoImageInterface){
-    this.imageToEdit = demoImage;
+  toggleImageEditor(demoImageData: DemoImageInterface){
+    this.imageData = demoImageData;
     this.showImageEditorWindow = !this.showImageEditorWindow;
-  }  
+  }
+
+  updateImage(updatedImageData: DemoImageInterface){
+    const imageToUpdateIndex = this.demoImages.findIndex( data => data.name === updatedImageData.name);
+    this.demoImages[imageToUpdateIndex] = updatedImageData;
+    this.showImageEditorWindow = false;
+  }
+
+  closePopup(){
+    this.showImageEditorWindow = false;
+  }
 }

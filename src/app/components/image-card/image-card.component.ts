@@ -6,14 +6,9 @@ import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
   templateUrl: "./image-card.component.html",
   styleUrls: ["./image-card.component.scss"]
 })
-export class ImageCardComponent implements OnInit {
+export class ImageCardComponent {
   @Input() demoImage: DemoImageInterface;
   @Output() toggleImageEditor = new EventEmitter();
-  
-
-  constructor() {}
-
-  ngOnInit() {}
 
   showEditor() {
     this.toggleImageEditor.next(this.demoImage);

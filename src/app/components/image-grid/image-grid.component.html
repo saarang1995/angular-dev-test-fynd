@@ -1,9 +1,9 @@
-<!-- <div class="image-grid__container">
+<div class="image-grid__container">
   <div class="image-grid__wrapper">
     <div class="image_card__container" *ngFor="let image of demoImages">
       <app-image-card [demoImage]="image" (toggleImageEditor)="toggleImageEditor($event)"></app-image-card>
     </div>
   </div>
-</div> -->
+</div>
 
-<app-image-editor *ngIf="showImageEditorWindow"></app-image-editor>
+<app-image-editor *ngIf="showImageEditorWindow" [imageData]="imageData" (closePopup)="closePopup()" (updateImage)="updateImage($event)"></app-image-editor>
