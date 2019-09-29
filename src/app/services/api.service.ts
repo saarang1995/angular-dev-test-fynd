@@ -13,6 +13,7 @@ export class ApiService {
   ) {}
 
   API_BASE: string = "http://demo4126999.mockable.io/";
+
   API = {
     DEMO_IMAGES: this.API_BASE + "images"
   };

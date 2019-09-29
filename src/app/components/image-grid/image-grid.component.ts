@@ -31,6 +31,13 @@ export class ImageGridComponent implements OnInit {
     this.showImageEditorWindow = !this.showImageEditorWindow;
   }
 
+  triggerDeleteImage(imageToDelete: DemoImageInterface){
+    const isDeletionConfirmed = window.confirm(`Are you sure you want to delete ${imageToDelete.name}?`)
+    if(!isDeletionConfirmed) return;
+    const filteredDemoImages = this.demoImages.filter(data => data.name !== imageToDelete.name);
+    this.demoImages = filteredDemoImages;
+  }
+
   updateImage(updatedImageData: DemoImageInterface){
     const imageToUpdateIndex = this.demoImages.findIndex( data => data.name === updatedImageData.name);
     this.demoImages[imageToUpdateIndex] = updatedImageData;

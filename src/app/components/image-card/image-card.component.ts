@@ -9,8 +9,12 @@ import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
 export class ImageCardComponent {
   @Input() demoImage: DemoImageInterface;
   @Output() toggleImageEditor = new EventEmitter();
+  @Output() triggerDeleteImage = new EventEmitter();
 
   showEditor() {
     this.toggleImageEditor.next(this.demoImage);
+  }
+  deleteImage(){
+    this.triggerDeleteImage.next(this.demoImage);
   }
 }

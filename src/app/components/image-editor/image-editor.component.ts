@@ -16,8 +16,8 @@ export class ImageEditorComponent {
   setImage(event) {
     var reader = new FileReader();
 
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-
+    reader.readAsDataURL(event.target.files[0]);
+    
     reader.onload = (event: Event) => {
       this.newImageSrc = reader.result as string;
     };

@@ -1,7 +1,7 @@
 <div class="image-grid__container">
   <div class="image-grid__wrapper">
     <div class="image_card__container" *ngFor="let image of demoImages">
-      <app-image-card [demoImage]="image" (toggleImageEditor)="toggleImageEditor($event)"></app-image-card>
+      <app-image-card [demoImage]="image" (toggleImageEditor)="toggleImageEditor($event)" (triggerDeleteImage)="triggerDeleteImage($event)"></app-image-card>
     </div>
   </div>
 </div>
