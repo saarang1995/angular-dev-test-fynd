@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
-import { EventEmitter } from "protractor";
 
 @Component({
   selector: "app-image-card",
@@ -10,8 +9,11 @@ import { EventEmitter } from "protractor";
 export class ImageCardComponent implements OnInit {
   @Input() demoImage: DemoImageInterface;
   @Output() imageEditTrigger = new EventEmitter();
-  
-  constructor() {}
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
 }

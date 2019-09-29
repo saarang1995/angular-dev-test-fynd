@@ -1,8 +1,7 @@
 <div class="image-grid__container">
   <div class="image-grid__wrapper">
-    <div class="image-grid_item"></div>
-    <div class="image-grid_item"></div>
-    <div class="image-grid_item"></div>
-    <div class="image-grid_item"></div>
+    <div class="image_card__container" *ngFor="let image of demoImages">
+      <app-image-card [demoImage]="image"></app-image-card>
+    </div>
   </div>
 </div>
