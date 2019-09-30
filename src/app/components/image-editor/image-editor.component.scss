@@ -24,7 +24,10 @@ $light-blue: #2196f3;
     flex-direction: column;
     justify-content: space-between;
 
-    @include mobileMedium {
+    @include laptop {
+      width: 90%;
+    }
+    @include mobileLarge {
       min-width: 30rem;
       width: 90%;
       height: 50%;
@@ -95,6 +98,11 @@ $light-blue: #2196f3;
           cursor: pointer;
           transition: 0.5s;
 
+          @include mobileLarge {
+            width: 25rem;
+            height: 12.5rem;
+          }
+
           @include mobileMedium {
             width: 16rem;
             height: 10rem;
@@ -102,6 +110,7 @@ $light-blue: #2196f3;
           @include mobileSmall {
             width: 13rem;
             margin: 1rem 0;
+            height: 7rem;
           }
         }
         .img_name {
