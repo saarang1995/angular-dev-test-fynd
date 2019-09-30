@@ -33,6 +33,7 @@ $light-blue: #2196f3;
 
     @include mobileSmall {
       min-height: 31rem;
+      width: 40%;
     }
     .header {
       display: flex;

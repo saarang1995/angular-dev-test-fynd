@@ -12,7 +12,7 @@ export class ApiService {
     private databaseService: DatabaseService
   ) {}
 
-  API_BASE: string = "http://demo4126999.mockable.io/";
+  API_BASE: string = "https://demo4126999.mockable.io/";
 
   API = {
     DEMO_IMAGES: this.API_BASE + "images"
