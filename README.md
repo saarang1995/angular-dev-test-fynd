@@ -12,4 +12,4 @@ The entire application is on the home route. On hover of the images shows edit a
 
 Application is deployed on the below link as well
 
-[website link] (https://naughty-sinoussi-dd1b81.netlify.com)
+https://naughty-sinoussi-dd1b81.netlify.com
