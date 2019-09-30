@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject, Observable } from "rxjs";
-import { DemoImageInterface } from "../interfaces/demo-image-intf";
+import { ImageDataInterface } from "../interfaces/image-data-intf";
 
 @Injectable({
   providedIn: "root"
@@ -8,19 +8,19 @@ import { DemoImageInterface } from "../interfaces/demo-image-intf";
 export class DatabaseService {
   constructor() {}
 
-  private demoImagesData: DemoImageInterface[];
+  private imageData: ImageDataInterface[];
 
-  private demoImagesDataChangeEvent: Subject<null> = new Subject<null>();
-  demoImagesDataChangeEvent$: Observable<
+  private imageDataChangeEvent: Subject<null> = new Subject<null>();
+  imageDataChangeEvent$: Observable<
     null
-  > = this.demoImagesDataChangeEvent.asObservable();
+  > = this.imageDataChangeEvent.asObservable();
 
-  setDemoImagesData(data: DemoImageInterface[]) {
-    this.demoImagesData = data;
-    this.demoImagesDataChangeEvent.next();
+  setImageData(data: ImageDataInterface[]) {
+    this.imageData = data;
+    this.imageDataChangeEvent.next();
   }
 
-  getDemoImagesData(): DemoImageInterface[] {
-    return this.demoImagesData;
+  getImageData(): ImageDataInterface[] {
+    return this.imageData;
   }
 }

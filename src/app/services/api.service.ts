@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { DatabaseService } from "./database.service";
-import { DemoImageInterface } from '../interfaces/demo-image-intf';
+import { ImageDataInterface } from '../interfaces/image-data-intf';
 
 @Injectable({
   providedIn: "root"
@@ -15,14 +15,14 @@ export class ApiService {
   API_BASE: string = "https://demo4126999.mockable.io/";
 
   API = {
-    DEMO_IMAGES: this.API_BASE + "images"
+    IMAGE_DATA: this.API_BASE + "images"
   };
 
-  fetchDemoImages() {
+  fetchImageData() {
     return this.http
-      .get(this.API.DEMO_IMAGES)
-      .subscribe((data: DemoImageInterface[]) => {
-        this.databaseService.setDemoImagesData(data)
+      .get(this.API.IMAGE_DATA)
+      .subscribe((data: ImageDataInterface[]) => {
+        this.databaseService.setImageData(data)
       });
   }
 }

@@ -23,12 +23,11 @@
   .controller__container {
     width: 32rem;
     height: 17rem;
-
-    display: none;
     position: absolute;
     background: rgba($color: #fff, $alpha: 0.5);
     transition: 0.5s;
-
+    display: none;
+    
     .controller {
       width: 2.2rem;
       height: 2.2rem;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
+import { ImageDataInterface } from "src/app/interfaces/image-data-intf";
 
 @Component({
   selector: "app-image-editor",
@@ -7,7 +7,7 @@ import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
   styleUrls: ["./image-editor.component.scss"]
 })
 export class ImageEditorComponent {
-  @Input() imageData: DemoImageInterface;
+  @Input() imageData: ImageDataInterface;
   @Output() updateImage = new EventEmitter();
   @Output() closePopup = new EventEmitter();
 

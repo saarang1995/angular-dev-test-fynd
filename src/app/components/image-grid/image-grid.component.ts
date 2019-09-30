@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/app/services/api.service";
-import { DemoImageInterface } from "src/app/interfaces/demo-image-intf";
+import { ImageDataInterface } from "src/app/interfaces/image-data-intf";
 import { DatabaseService } from "src/app/services/database.service";
 
 @Component({
@@ -9,38 +9,38 @@ import { DatabaseService } from "src/app/services/database.service";
   styleUrls: ["./image-grid.component.scss"]
 })
 export class ImageGridComponent implements OnInit {
-  demoImages: DemoImageInterface[];
-  imageData: DemoImageInterface;
+  imageDataArray: ImageDataInterface[];
+  imageData: ImageDataInterface;
   showImageEditorWindow: boolean = false;
 
   constructor(
     private apiService: ApiService,
     private databaseService: DatabaseService
   ) {
-    this.databaseService.demoImagesDataChangeEvent$.subscribe(
-      () => (this.demoImages = this.databaseService.getDemoImagesData())
+    this.databaseService.imageDataChangeEvent$.subscribe(
+      () => (this.imageDataArray = this.databaseService.getImageData())
     );
   }
 
   ngOnInit(): void {
-    this.apiService.fetchDemoImages();
+    this.apiService.fetchImageData();
   }
 
-  toggleImageEditor(demoImageData: DemoImageInterface){
-    this.imageData = demoImageData;
+  toggleImageEditor(incomingImageData: ImageDataInterface){
+    this.imageData = incomingImageData;
     this.showImageEditorWindow = !this.showImageEditorWindow;
   }
 
-  triggerDeleteImage(imageToDelete: DemoImageInterface){
+  triggerDeleteImage(imageToDelete: ImageDataInterface){
     const isDeletionConfirmed = window.confirm(`Are you sure you want to delete Image: ${imageToDelete.name}?`)
     if(!isDeletionConfirmed) return;
-    const filteredDemoImages = this.demoImages.filter(data => data.name !== imageToDelete.name);
-    this.demoImages = filteredDemoImages;
+    const filteredImageDataArray = this.imageDataArray.filter(data => data.name !== imageToDelete.name);
+    this.imageDataArray = filteredImageDataArray;
   }
 
-  updateImage(updatedImageData: DemoImageInterface){
-    const imageToUpdateIndex = this.demoImages.findIndex( data => data.name === updatedImageData.name);
-    this.demoImages[imageToUpdateIndex] = updatedImageData;
+  updateImage(updatedImageData: ImageDataInterface){
+    const imageToUpdateIndex = this.imageDataArray.findIndex( data => data.name === updatedImageData.name);
+    this.imageDataArray[imageToUpdateIndex] = updatedImageData;
     this.showImageEditorWindow = false;
   }
 
